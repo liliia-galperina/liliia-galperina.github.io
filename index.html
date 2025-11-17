@@ -2,531 +2,99 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>IDEALL Impact gUG</title>
-  <meta name="theme-color" content="#1D3557">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IDEALL Impact gUG · Bildung · Integration · Digitale Kompetenzen</title>
+  <meta name="description" content="IDEALL Impact gUG – Bildungsinitiative in Berlin. Fokus: Bildung, Integration, digitale Kompetenzen.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="IDEALL Impact gUG">
+  <meta property="og:description" content="Wir entwickeln Kompetenzen. Wir eröffnen Chancen.">
+  <meta property="og:image" content="og-image.svg">
   <style>
-    :root {
-      --blue:#1D3557;
-      --gray:#E0E0E0;
-      --text:#111;
-      --bg:#fff;
-    }
+    :root{--blue:#1D3557;--gray:#E0E0E0;--text:#1b1f23;--max:1100px}
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--text);background:var(--bg)}
+    body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text)}
     a{color:inherit;text-decoration:none}
-    header.console{background:var(--blue);color:#fff}
-    header.console .bar{}
-    header.console .bar .wrap{display:flex;align-items:flex-start;gap:24px;padding:10px 16px}
-    .brand-block{display:flex;align-items:center;gap:14px;margin-right:auto}
-    .brand-block .brand img{height:120px;max-height:120px;width:auto;display:block}
-    .brand-lines{display:flex;flex-direction:column;line-height:1.15}
-    .brand-lines .motto{font-weight:700;color:#fff}
-    .brand-lines .tagline{color:#fff;opacity:.95}
-    nav.menu{display:flex;gap:18px;align-items:center}
-    nav.menu a{color:#fff;font-weight:600}
-    .lang{display:flex;gap:10px;margin-left:8px}
-    .lang a{color:#fff;opacity:.9}
-    main{padding:32px 16px;max-width:1100px;margin:0 auto}
-    section{margin:32px 0}
-    h2{margin:0 0 12px 0;font-size:1.6rem}
-    .sdg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-    figure{margin:0;padding:12px;border:1px solid var(--gray);border-radius:12px;background:#fff}
-    figure img{max-width:100%;height:auto;display:block;margin:0 auto 8px}
-    figure figcaption{text-align:center;color:#333;font-size:.95rem}
-    footer{margin-top:40px;padding:20px 16px;border-top:1px solid var(--gray);color:#444}
-    @media (max-width:640px){
-      .brand-block .brand img{height:72px;max-height:72px}
-      header.console .bar .wrap{flex-wrap:wrap;gap:12px}
-      nav.menu{flex-wrap:wrap;gap:12px}
-    }
+
+    /* Header */
+    .bar{position:sticky;top:0;z-index:10;background:var(--blue);color:#fff;border-bottom:2px solid #0f223e}
+    .wrap{max-width:var(--max);margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:36px;height:36px;border-radius:8px;display:block}
+    .brand .lines{display:flex;flex-direction:column}
+    .brand .motto{font-weight:700}
+    .brand .tagline{font-size:14px;opacity:.9}
+    .menu{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+    .menu a{color:#fff;opacity:.95}
+    .menu a:hover{text-decoration:underline;opacity:1}
+
+    main{max-width:var(--max);margin:24px auto;padding:0 16px}
+    .section{margin:36px 0}
+    h1,h2{margin:0 0 12px}
+    p{margin:0 0 16px}
+
+    /* SDG grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--gray);border-radius:12px;background:#fafafa}
+    .card img{width:48px;height:48px;display:block}
+    .card span{font-weight:600}
+
+    footer{border-top:1px solid var(--gray);padding:16px;margin-top:40px;font-size:14px}
+    footer a{color:var(--blue)}
   </style>
-
-<style>
-/* SDG: force 4×2 on desktop, 2 columns on small screens */
-.sdg-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:20px;justify-items:center;align-items:center}
-@media (max-width: 800px){
-  .sdg-grid{grid-template-columns:repeat(2,minmax(140px,1fr))}
-}
-</style>
-
-
-<style>
-/* Sticky translucent header on scroll */
-header.console { position: sticky; top: 0; z-index: 1000; background: rgba(29,53,87,0.98); transition: background .25s ease, box-shadow .25s ease; backdrop-filter: none; }
-body.scrolled header.console { background: rgba(29,53,87,0.84); backdrop-filter: saturate(120%) blur(6px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
-/* Footer links */
-footer a { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); padding-bottom: 1px; }
-footer .legal { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-footer .legal .sep { opacity:.5; }
-</style>
-
-
-<style>
-footer.legal-v25{margin-top:40px;padding:20px 16px;border-top:1px solid #E0E0E0;color:#444;display:flex;flex-direction:column;gap:6px}
-footer.legal-v25 .links{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-footer.legal-v25 a{text-decoration:none;border-bottom:1px solid rgba(0,0,0,.15);padding-bottom:1px}
-footer.legal-v25 .sep{opacity:.5}
-</style>
-
-
-<style>
-@media (max-width: 700px){
-  
-}
-#vision, #programs, #donate, #about, #contacts { scroll-margin-top: 140px; }
-.footer-subbar.thin { background:#1D3557; color:#fff; text-align:center; padding:8px 10px; font-weight:600; }
-</style>
-
-
-<style>
-/* UN logos: uniform size */
-/* Anchor offset */
-#vision, #programs, #donate, #about, #contacts { scroll-margin-top: 140px; }
-/* Blue subbar: thin, two columns */
-.footer-subbar{ display:flex; justify-content:space-between; align-items:center; gap:16px; background:#1D3557; color:#fff; padding:8px 12px; font-weight:600 }
-.footer-subbar a#legal_open_subbar{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.45); padding-bottom:1px }
-</style>
-
-
-<style>
-/* Uniform UN SDG icon sizing */
-#vision, #programs, #donate, #about, #contacts { scroll-margin-top: 140px; }
-</style>
-
-
-<style>
-.footer-subbar{ display:flex; justify-content:space-between; align-items:center; gap:16px; background:#1D3557; color:#fff; padding:8px 12px; font-weight:600 }
-.footer-subbar a#legal_open_subbar{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.45); padding-bottom:1px }
-</style>
-
 </head>
 <body>
-  <header class="console">
-    <div class="bar">
-      <div class="wrap">
-        <div class="brand-block">
-          <a class="brand" href="#top" aria-label="IDEALL Impact">
-            <img src="assets/brand/IDEALL_Impact_logo.png" alt="IDEALL Impact logo">
-          </a>
-          <div class="brand-lines">
-            <div class="motto" data-i="motto">Wir entwickeln Kompetenzen. Wir eröffnen Chancen.</div>
-            <div class="tagline" data-i="tagline.core">Bildung • Integration • Digitale Kompetenzen</div>
-          </div>
+
+  <header class="bar">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="favicon.svg" alt="IDEALL Impact">
+        <div class="lines">
+          <div class="motto">IDEALL Impact</div>
+          <div class="tagline">Bildung · Integration · Digitale Kompetenzen</div>
         </div>
-        <nav class="menu">
-          <a href="#vision" data-i="nav.vision">Vision</a>
-          <a href="#programs" data-i="nav.programs">Programme</a>
-          <a href="#donate" data-i="nav.donate">Spenden</a>
-          <a href="#about" data-i="nav.about">Über uns</a>
-          <a href="#contacts" data-i="nav.contacts">Kontakt</a>
-          <span class="lang">
-            <a href="#de" data-lang="de">DE</a>
-            <a href="#en" data-lang="en">EN</a>
-            <a href="#uk" data-lang="uk">UK</a>
-          </span></nav>
-      </div>
+      </a>
+      <nav class="menu">
+        <a href="#vision">Vision</a>
+        <a href="#programme">Programme</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section id="vision">
-      <h2 data-i="section.vision">Vision</h2>
-      <p data-i="about.summary">
-        IDEALL Impact gUG ist eine gemeinnützige Bildungsinitiative in Berlin. Fokus: Bildung, Integration, digitale Kompetenzen.
-      </p>
+    <section id="vision" class="section">
+      <h2>Vision</h2>
+      <p>IDEALL Impact gUG ist eine gemeinnützige Bildungsinitiative in Berlin. Fokus: Bildung, Integration, digitale Kompetenzen.</p>
+    </section>
 
-      <div class="sdg-grid" aria-label="UN SDG focus areas of IDEALL Impact">
-        <figure><img src="assets/un/SDG_01.png" alt="UN SDG 1 No Poverty"><figcaption>SDG 1 — No Poverty</figcaption></figure>
-        <figure><img src="assets/un/SDG_04.png" alt="UN SDG 4 Quality Education"><figcaption>SDG 4 — Quality Education</figcaption></figure>
-        <figure><img src="assets/un/SDG_05.png" alt="UN SDG 5 Gender Equality"><figcaption>SDG 5 — Gender Equality</figcaption></figure>
-        <figure><img src="assets/un/SDG_08.png" alt="UN SDG 8 Decent Work and Economic Growth"><figcaption>SDG 8 — Decent Work & Growth</figcaption></figure>
-        <figure><img src="assets/un/SDG_09.png" alt="UN SDG 9 Industry, Innovation and Infrastructure"><figcaption>SDG 9 — Industry & Innovation</figcaption></figure>
-        <figure><img src="assets/un/SDG_10.png" alt="UN SDG 10 Reduced Inequalities"><figcaption>SDG 10 — Reduced Inequalities</figcaption></figure>
-        <figure><img src="assets/un/SDG_16.png" alt="UN SDG 16 Peace, Justice and Strong Institutions"><figcaption>SDG 16 — Peace, Justice, Institutions</figcaption></figure>
-        <figure><img src="assets/un/SDG_17.png" alt="UN SDG 17 Partnerships for the Goals"><figcaption>SDG 17 — Partnerships</figcaption></figure>
+    <section id="programme" class="section">
+      <h2>Programme</h2>
+      <div class="grid">
+        <div class="card"><img src="assets/UN/E_SDG_Icons-01.svg" alt="UN SDG 1 – No Poverty"><span>SDG 1 — No Poverty</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-04.svg" alt="UN SDG 4 – Quality Education"><span>SDG 4 — Quality Education</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-05.svg" alt="UN SDG 5 – Gender Equality"><span>SDG 5 — Gender Equality</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-08.svg" alt="UN SDG 8 – Decent Work & Growth"><span>SDG 8 — Decent Work & Growth</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-09.svg" alt="UN SDG 9 – Industry, Innovation & Infrastructure"><span>SDG 9 — Industry & Innovation</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-10.svg" alt="UN SDG 10 – Reduced Inequalities"><span>SDG 10 — Reduced Inequalities</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-16.svg" alt="UN SDG 16 – Peace, Justice & Strong Institutions"><span>SDG 16 — Peace, Justice, Institutions</span></div>
+        <div class="card"><img src="assets/UN/E_SDG_Icons-17.svg" alt="UN SDG 17 – Partnerships"><span>SDG 17 — Partnerships</span></div>
       </div>
     </section>
 
-    <section id="programs">
-      <h2 data-i="section.programs">Programme</h2>
-      <p data-i="programs.placeholder">
-        Derzeit keine offenen Anmeldungen. Neue Programme erscheinen hier.
-      </p>
+    <section id="kontakt" class="section">
+      <h2>Kontakt</h2>
+      <p>E-Mail: <a href="mailto:info@ideall-impact.org">info@ideall-impact.org</a></p>
     </section>
+  </main>
 
-<section id="donate">
-  <h2>Spenden</h2>
-  <div id="donate_body">
-    <p>Unterstützen Sie IDEALL Impact gUG. Wir stellen Spendenbescheinigungen aus (§60a AO).</p>
-    <ul>
-      <li><strong>Überweisung:</strong> IBAN — <em>wird ergänzt</em></li>
-      <li><strong>Zweck:</strong> Bildung · Integration · Digitale Kompetenzen</li>
-    </ul>
-  </div>
-</section>
-
-
-    <section id="about">
-  <h2 data-i="section.about">Über uns</h2>
-  <p id="about_status">IDEALL Impact gUG besitzt Gemeinnützigkeitsstatus (§60a AO). Wir können Spendenbescheinigungen ausstellen.</p>
-  <div id="about_body">
-    <p><strong>Was wir tun:</strong> Wir unterstützen Zugewanderte und Communities in Berlin mit Bildungsangeboten, Sprachförderung und digitalen Kompetenzen (IT‑Grundlagen, Cybersicherheit, KI‑Grundlagen).</p>
-    <p><strong>Für wen:</strong> Kinder, Jugendliche und Erwachsene – mit besonderem Fokus auf Neuangekommene aus der Ukraine.</p>
-    <p><strong>Wie:</strong> Kurse, Workshops, Projektarbeit an Schulen und in Partnerschaft mit lokalen Akteuren.</p>
-  </div>
-</section>
-
-    
-  
-    <section id="contacts">
-      <h2 data-i="section.contacts">Kontakt</h2>
-      <p><strong data-i="label.email">E‑Mail:</strong> <a href="mailto:info@ideall-impact.org">info@ideall-impact.org</a></p>
-      <p><strong data-i="label.address">Adresse:</strong> Berlin</p>
-    </section>
-</main>
-
-  
-<div class="footer-subbar"><span id="rights_line">© 2025 IDEALL Impact gUG (haftungsbeschränkt) — Alle Rechte vorbehalten.</span><a href="#legal" id="legal_open_subbar">Recht</a></div>
-
-  <script>
-  (function(){
-    // Local dictionary (no external scripts). Default lang = DE.
-    var DICT = {
-      de: {
-        "nav.vision":"Vision","nav.programs":"Programme","nav.donate":"Spenden","nav.about":"Über uns","nav.contacts":"Kontakt",
-        "section.vision":"Vision","section.programs":"Programme","section.donate":"Spenden","section.about":"Über uns","section.contacts":"Kontakt",
-        "motto":"Wir entwickeln Kompetenzen. Wir eröffnen Chancen.",
-        "tagline.core":"Bildung • Integration • Digitale Kompetenzen",
-        "programs.placeholder":"Derzeit keine offenen Anmeldungen. Neue Programme erscheinen hier.",
-        "about.summary":"IDEALL Impact gUG ist eine gemeinnützige Bildungsinitiative in Berlin. Fokus: Bildung, Integration, digitale Kompetenzen.",
-        "legal.taxstatus":"IDEALL Impact gUG besitzt Gemeinnützigkeitsstatus (§60a AO). Wir können Spendenbescheinigungen ausstellen.",
-        "label.email":"E‑Mail","label.address":"Adresse"
-      },
-      en: {
-        "nav.vision":"Vision","nav.programs":"Programs","nav.donate":"Donations","nav.about":"About","nav.contacts":"Contacts",
-        "section.vision":"Vision","section.programs":"Programs","section.donate":"Donations","section.about":"About","section.contacts":"Contacts",
-        "motto":"We grow skills. We open opportunities.",
-        "tagline.core":"Education • Integration • Digital skills",
-        "programs.placeholder":"No open enrollments at the moment. New programs will appear here.",
-        "about.summary":"IDEALL Impact gUG is a non-profit educational initiative in Berlin. Focus: education, integration, digital competencies.",
-        "legal.taxstatus":"IDEALL Impact gUG has public-benefit status (§60a AO). We can issue donation receipts.",
-        "label.email":"Email","label.address":"Address"
-      },
-      uk: {
-        "nav.vision":"Візія","nav.programs":"Програми","nav.donate":"Пожертви","nav.about":"Про нас","nav.contacts":"Контакти",
-        "section.vision":"Візія","section.programs":"Програми","section.donate":"Пожертви","section.about":"Про нас","section.contacts":"Контакти",
-        "motto":"Розвиваємо навички. Відкриваємо можливості.",
-        "tagline.core":"Освіта • Інтеграція • Цифрові навички",
-        "programs.placeholder":"Наразі відкритих наборів немає. Нові програми з’являтимуться тут.",
-        "about.summary":"IDEALL Impact gUG — неприбуткова освітня ініціатива в Берліні. Фокус: освіта, інтеграція, цифрові компетенції.",
-        "legal.taxstatus":"IDEALL Impact gUG має статус gemeinnützige Körperschaft (§60a AO). Ми можемо видавати податкові підтвердження про пожертви.",
-        "label.email":"Пошта","label.address":"Адреса"
-      }
-    };
-
-    function applyDict(lang){
-      document.documentElement.setAttribute('lang', lang);
-      var nodes = document.querySelectorAll('[data-i]');
-      nodes.forEach(function(el){
-        var k = el.getAttribute('data-i');
-        var t = DICT[lang] && DICT[lang][k];
-        if (t) el.textContent = t;
-      });
-    }
-
-    // Bind language links
-    document.addEventListener('click', function(e){
-      var el = e.target.closest('[data-lang]');
-      if(!el) return;
-      e.preventDefault();
-      var lang = (el.getAttribute('data-lang')||'de').toLowerCase();
-      applyDict(lang);
-    });
-
-    // Initial: German
-    document.addEventListener('DOMContentLoaded', function(){
-      applyDict('de');
-    });
-  })();
-  </script>
-
-<script>
-(function(){
-  // Sticky translucent header
-  function onScroll(){
-    if (window.scrollY > 10) { document.body.classList.add('scrolled'); }
-    else { document.body.classList.remove('scrolled'); }
-  }
-  document.addEventListener('scroll', onScroll, {passive:true});
-  document.addEventListener('DOMContentLoaded', onScroll);
-
-  // Extend local i18n dictionary for new items (merging into existing DICT)
-  var EXTRA = {
-    de: {
-      "section.impressum":"Impressum",
-      "section.privacy":"Datenschutz",
-      "footer.rights":"Alle Rechte vorbehalten.",
-      "footer.impressum":"Impressum",
-      "footer.privacy":"Datenschutz",
-      "label.company":"Unternehmen",
-      "label.register":"Register",
-      "label.management":"Geschäftsführung",
-      "privacy.note":"Wir achten den Schutz Ihrer Daten. Auf Anfrage erhalten Sie Auskunft über gespeicherte Daten und können deren Löschung beantragen."
-    },
-    en: {
-      "section.impressum":"Imprint",
-      "section.privacy":"Privacy",
-      "footer.rights":"All rights reserved.",
-      "footer.impressum":"Imprint",
-      "footer.privacy":"Privacy",
-      "label.company":"Company",
-      "label.register":"Register",
-      "label.management":"Management",
-      "privacy.note":"We respect your data protection. Upon request, you can receive information about stored data and request deletion."
-    },
-    uk: {
-      "section.impressum":"Імпресум",
-      "section.privacy":"Захист даних",
-      "footer.rights":"Усі права захищені.",
-      "footer.impressum":"Імпресум",
-      "footer.privacy":"Захист даних",
-      "label.company":"Компанія",
-      "label.register":"Реєстр",
-      "label.management":"Керівництво",
-      "privacy.note":"Ми поважаємо захист ваших даних. На запит ви можете отримати інформацію про збережені дані та вимагати їх видалення."
-    }
-  };
-
-  // Patch the existing DICT from the safe v16 (if present)
-  try {
-    var scriptTags = document.getElementsByTagName('script');
-    for (var i=0;i<scriptTags.length;i++){
-      if(scriptTags[i].textContent.indexOf('var DICT = {') !== -1){
-        // naive merge by evaluating in a sandboxed function
-        (function(){
-          var oldApply = window.applyDict;
-        })();
-      }
-    }
-  } catch(e){}
-
-  // Attach to the existing local i18n: find DICT and applyDict
-  function mergeExtra(){
-    try{
-      var DICT = window.__SAFE_DICT__ || null;
-      if(!DICT){
-        // Heuristic: locate DICT in the same script that defines applyDict
-        // We'll redefine applyDict to capture DICT
-      }
-    }catch(e){}
-  }
-
-  // If the original script doesn't expose DICT, we add our own re-apply after clicks
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-lang]');
-    if(!el) return;
-    setTimeout(function(){
-      // manual pass for our new keys
-      var lang = (document.documentElement.getAttribute('lang')||'de').toLowerCase();
-      var MAP = EXTRA[lang]||{};
-      document.querySelectorAll('[data-i]').forEach(function(nd){
-        var k = nd.getAttribute('data-i');
-        if (MAP[k]) nd.textContent = MAP[k];
-      });
-    }, 10);
-  });
-
-  // Initial apply for new keys
-  document.addEventListener('DOMContentLoaded', function(){
-    var lang = (document.documentElement.getAttribute('lang')||'de').toLowerCase();
-    var MAP = EXTRA[lang]||{};
-    document.querySelectorAll('[data-i]').forEach(function(nd){
-      var k = nd.getAttribute('data-i');
-      if (MAP[k]) nd.textContent = MAP[k];
-    });
-  });
-})();
-</script>
-
-
-<div id="legal_modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.45);z-index:2000">
-  <div style="background:#fff;max-width:900px;width:92%;max-height:84vh;overflow:auto;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.25);padding:20px 16px">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px">
-      <h3 style="margin:0">Rechtliche Informationen</h3>
-      <button id="legal_close" style="border:0;background:#1D3557;color:#fff;border-radius:10px;padding:8px 12px;cursor:pointer">Schließen</button>
+  <footer>
+    <div class="wrap" style="justify-content:space-between">
+      <div>© IDEALL Impact gUG (haftungsbeschränkt), Berlin</div>
+      <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
     </div>
-    <div id="legal_content">
-      <section id="modal_impressum">
-        <h4>Impressum</h4>
-        <p><strong>Unternehmen:</strong> IDEALL Impact gUG (haftungsbeschränkt)</p>
-        <p><strong>Register:</strong> HRB 279296 B — Amtsgericht Charlottenburg (Berlin)</p>
-        <p><strong>Geschäftsführung:</strong> Liliia Galperina</p>
-        <p><strong>Adresse:</strong> Berlin, Deutschland</p>
-        <p><strong>E-Mail:</strong> <a href="mailto:info@ideall-impact.org">info@ideall-impact.org</a></p>
-      </section>
-      <section id="modal_privacy">
-        <h4>Datenschutz</h4>
-        <p>Wir verarbeiten personenbezogene Daten nur im notwendigen Umfang. Auf Anfrage erhalten Sie Auskunft über gespeicherte Daten und können deren Löschung beantragen.</p>
-      </section>
-      <section id="modal_cookies">
-        <h4>Cookies</h4>
-        <p>Diese Seite verwendet ausschließlich technisch notwendige Cookies für die Grundfunktionalität. Es findet kein Tracking zu Werbezwecken statt.</p>
-      </section>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function(){
-  document.addEventListener('click', function(e){
-    var o = e.target.closest('#legal_open');
-    if(o){ e.preventDefault(); document.getElementById('legal_modal').style.display='flex'; }
-    var c = e.target.closest('#legal_close');
-    if(c){ e.preventDefault(); document.getElementById('legal_modal').style.display='none'; }
-    if(e.target && e.target.id==='legal_modal'){ document.getElementById('legal_modal').style.display='none'; }
-  });
-  function setRightsByLang(){
-    var l = (document.documentElement.getAttribute('lang')||'de').toLowerCase();
-    var text = '© 2025 IDEALL Impact gUG (haftungsbeschränkt) — Alle Rechte vorbehalten.';
-    if(l==='en') text = '© 2025 IDEALL Impact gUG (haftungsbeschränkt) — All rights reserved.';
-    if(l==='uk') text = '© 2025 IDEALL Impact gUG (haftungsbeschränkt) — Усі права захищені.';
-    var span = document.getElementById('rights_line');
-    if(span) span.textContent = text;
-  }
-  document.addEventListener('DOMContentLoaded', setRightsByLang);
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-lang], a[href="#de"], a[href="#en"], a[href="#uk"]');
-    if(!el) return;
-    setTimeout(setRightsByLang, 10);
-  }, true);
-})();
-</script>
-
-
-<script>
-(function(){
-  function openLegal(){ var m=document.getElementById('legal_modal'); if(m){ m.style.display='flex'; } }
-  document.addEventListener('click', function(e){
-    var b = e.target && e.target.closest('#legal_open_subbar');
-    if(b){ e.preventDefault(); openLegal(); }
-  });
-  function setRightsAndLegalLabel(){
-    var l=(document.documentElement.getAttribute('lang')||'de').toLowerCase();
-    var rights='© 2025 IDEALL Impact gUG (haftungsbeschränkt) — Alle Rechte vorbehalten.';
-    var label='Recht';
-    if(l==='en'){ rights='© 2025 IDEALL Impact gUG (haftungsbeschränkt) — All rights reserved.'; label='Legal'; }
-    if(l==='uk'){ rights='© 2025 IDEALL Impact gUG (haftungsbeschränkt) — Усі права захищені.'; label='Правова інформація'; }
-    var span=document.getElementById('rights_line'); if(span) span.textContent=rights;
-    var a=document.getElementById('legal_open_subbar'); if(a) a.textContent=label;
-  }
-  document.addEventListener('DOMContentLoaded', setRightsAndLegalLabel);
-  document.addEventListener('click', function(e){
-    var trg=e.target && (e.target.closest('[data-lang]') || e.target.matches('a[href="#de"],a[href="#en"],a[href="#uk"]'));
-    if(!trg) return;
-    setTimeout(setRightsAndLegalLabel, 15);
-  }, true);
-})();
-</script>
-
-
-<script>
-(function(){
-  function renderLocalizedSections(){
-    var lang = (document.documentElement.getAttribute('lang')||'de').toLowerCase();
-    // Donations
-    var donate = document.getElementById('donate_body');
-    if(donate){
-      if(lang==='en'){
-        donate.innerHTML = ''
-          + '<p>Support IDEALL Impact gUG. We can issue donation receipts (§60a AO).</p>'
-          + '<ul>'
-          + '<li><strong>Bank transfer:</strong> IBAN — <em>to be added</em></li>'
-          + '<li><strong>Purpose:</strong> Education · Integration · Digital skills</li>'
-          + '</ul>';
-      } else if(lang==='uk'){
-        donate.innerHTML = ''
-          + '<p>Підтримайте IDEALL Impact gUG. Ми можемо видавати податкові підтвердження про пожертви (§60a AO).</p>'
-          + '<ul>'
-          + '<li><strong>Банківський переказ:</strong> IBAN — <em>буде додано</em></li>'
-          + '<li><strong>Призначення:</strong> Освіта · Інтеграція · Цифрові навички</li>'
-          + '</ul>';
-      } else { // de
-        donate.innerHTML = ''
-          + '<p>Unterstützen Sie IDEALL Impact gUG. Wir stellen Spendenbescheinigungen aus (§60a AO).</p>'
-          + '<ul>'
-          + '<li><strong>Überweisung:</strong> IBAN — <em>wird ergänzt</em></li>'
-          + '<li><strong>Zweck:</strong> Bildung · Integration · Digitale Kompetenzen</li>'
-          + '</ul>';
-      }
-    }
-    // About
-    var st = document.getElementById('about_status');
-    var body = document.getElementById('about_body');
-    if(st && body){
-      if(lang==='en'){
-        st.textContent = 'IDEALL Impact gUG has public-benefit status (§60a AO). We can issue donation receipts.';
-        body.innerHTML = ''
-          + '<p><strong>What we do:</strong> We support newcomers and communities in Berlin with education offers, language support, and digital skills (IT fundamentals, cybersecurity, AI basics).</p>'
-          + '<p><strong>For whom:</strong> Children, teenagers, and adults — with a special focus on people newly arrived from Ukraine.</p>'
-          + '<p><strong>How:</strong> Courses, workshops, project work at schools, and partnerships with local actors.</p>';
-      } else if(lang==='uk'){
-        st.textContent = 'IDEALL Impact gUG має статус gemeinnützige Körperschaft (§60a AO). Ми можемо видавати податкові підтвердження про пожертви.';
-        body.innerHTML = ''
-          + '<p><strong>Що ми робимо:</strong> Підтримуємо новоприбулих і спільноти в Берліні освітніми програмами, мовною підтримкою та цифровими навичками (основи ІТ, кібербезпека, бази ШІ).</p>'
-          + '<p><strong>Для кого:</strong> Діти, підлітки та дорослі — з особливим фокусом на тих, хто нещодавно прибув з України.</p>'
-          + '<p><strong>Як:</strong> Курси, воркшопи, проектна робота у школах і партнерства з місцевими ініціативами.</p>';
-      } else { // de
-        st.textContent = 'IDEALL Impact gUG besitzt Gemeinnützigkeitsstatus (§60a AO). Wir können Spendenbescheinigungen ausstellen.';
-        body.innerHTML = ''
-          + '<p><strong>Was wir tun:</strong> Wir unterstützen Zugewanderte und Communities in Berlin mit Bildungsangeboten, Sprachförderung und digitalen Kompetenzen (IT‑Grundlagen, Cybersicherheit, KI‑Grundlagen).</p>'
-          + '<p><strong>Für wen:</strong> Kinder, Jugendliche und Erwachsene – mit besonderem Fokus auf Neuangekommene aus der Ukraine.</p>'
-          + '<p><strong>Wie:</strong> Kurse, Workshops, Projektarbeit an Schulen und in Partnerschaft mit lokalen Akteuren.</p>';
-      }
-    }
-  }
-  document.addEventListener('DOMContentLoaded', renderLocalizedSections);
-  document.addEventListener('click', function(e){
-    var trg = e.target.closest('[data-lang], a[href="#de"], a[href="#en"], a[href="#uk"]');
-    if(!trg) return;
-    setTimeout(renderLocalizedSections, 15);
-  }, true);
-})();
-</script>
-
-
-<script>
-(function(){
-  function getLang(){
-    var a=(document.documentElement.getAttribute('lang')||'').toLowerCase();
-    if(a==='de'||a==='en'||a==='uk') return a;
-    var h=(location.hash||'').toLowerCase();
-    if(h==='#de'||h==='#en'||h==='#uk') return h.slice(1);
-    return 'de';
-  }
-  function setDonateLabels(){
-    var lang=getLang();
-    var labels={de:'Spenden', en:'Donations', uk:'Пожертви'};
-    var text=labels[lang]||labels.de;
-    var navDonate=document.querySelector('nav a[href="#donate"]');
-    if(navDonate) navDonate.textContent=text;
-    var h2Donate=document.querySelector('#donate h2');
-    if(h2Donate) h2Donate.textContent=text;
-  }
-  document.addEventListener('DOMContentLoaded', setDonateLabels);
-  document.addEventListener('click', function(e){
-    var trg=e.target && (e.target.closest('[data-lang]') || e.target.closest('a[href="#de"],a[href="#en"],a[href="#uk"]'));
-    if(!trg) return;
-    setTimeout(setDonateLabels, 15);
-  }, true);
-  new MutationObserver(function(muts){
-    for (var i=0;i<muts.length;i++){
-      if(muts[i].attributeName==='lang'){ setDonateLabels(); break; }
-    }
-  }).observe(document.documentElement,{attributes:true});
-})();
-</script>
+  </footer>
 
 </body>
 </html>
