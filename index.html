@@ -157,6 +157,37 @@ footer.legal-v25 .sep{opacity:.5}
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+  /* Сітка для UN-логотипів */
+.sdg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки на десктопі */
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.sdg-grid .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Розмір самих іконок */
+.sdg-grid .card img {
+  max-width: 120px;   /* можна змінити на 100 / 140, як тобі подобається */
+  height: 250px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+  .sdg-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на телефонах */
+  }
+}
+
     </style> 
 
         <div class="sdg-grid" aria-label="UN SDG focus areas of IDEALL Impact">
