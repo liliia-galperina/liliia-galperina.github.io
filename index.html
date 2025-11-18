@@ -157,7 +157,7 @@ footer.legal-v25 .sep{opacity:.5}
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-  /* Сітка для UN-логотипів */
+  /* сітка для UN-логотипів */
 .sdg-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 колонки на десктопі */
@@ -174,13 +174,14 @@ footer.legal-v25 .sep{opacity:.5}
 }
 
 /* Розмір самих іконок */
-.sdg-grid .card img {
-  max-width: 120px;   /* можна змінити на 100 / 140, як тобі подобається */
-  height: 250px;
-  display: block;
-  object-fit: contain;
-}
-
+.grid-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
+        } 
 /* Мобільна версія */
 @media (max-width: 768px) {
   .sdg-grid {
