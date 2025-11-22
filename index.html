@@ -480,11 +480,27 @@ footer.legal-v25 .sep{opacity:.5}
     var donate = document.getElementById('donate_body');
     if(donate){
       if(lang==='en'){
-        donate.innerHTML = ''
-          + '<p>Support IDEALL Impact gUG. We can issue donation receipts (§60a AO).</p>'
+         donate.innerHTML = ''
+          + '<p>Unterstützen Sie IDEALL Impact gUG. Wir stellen Spendenbescheinigungen aus (§60a AO).</p>'
           + '<ul>'
-          + '<li><strong>Bank transfer:</strong> IBAN: DE71 1005 0000 0191 5215 90<BR>BIC: BELADEBEXXX<BR>Bank: Berliner Sparkasse</li>'
-          + '<li><strong>Purpose:</strong> Education · Integration · Digital skills</li>'
+          + '<table border="0">'
+          + '<tr>'
+          + '<td><strong>Bank Transfer:</strong></td>'
+          + '<td>Bank:</td>'
+          + '<td>Berliner Sparkasse</td>'
+          + '</tr>'
+          + '<tr>'
+          + '<td></td>'
+          + '<td>IBAN:</td>'
+          + '<td>DE71 1005 0000 0191 5215 90</td>'
+          + '</tr>'
+          + '<tr>'
+          + '<td></td>'
+          + '<td>BIC:</td>'
+          + '<td>BELADEBEXXX</td>'
+          + '</tr>'
+          + '</table>'
+          + '<strong>Zweck:</strong> Bildung · Integration · Digitale Kompetenzen'
           + '</ul>';
       } else if(lang==='uk'){
         donate.innerHTML = ''
